@@ -198,9 +198,24 @@ function initialiseState() {
         window.Demo.debug.log('Error during getSubscription()', err);
       });
   });
+  navigator.serviceWorker.addEventListener('message', function(event) {
+      // A message has been received, now show the message on the page.
+      var clientId = event.data.client;
+      Console.log('main message clientId' + clientId);
+  });
 }
 
 window.addEventListener('load', function() {
+  var regButton = document.querySelector('.reg-button');
+  regButton.addEventListener('click', function() {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js')
+      .then(initialiseState);
+    } else {
+      window.Demo.debug.log('Service workers aren\'t supported in this browser.');
+    }
+  });
+
   var pushButton = document.querySelector('.js-push-button');
   pushButton.addEventListener('click', function() {
     if (isPushEnabled) {
@@ -210,12 +225,4 @@ window.addEventListener('load', function() {
     }
   });
 
-  // Check that service workers are supported, if so, progressively
-  // enhance and add push messaging support, otherwise continue without it.
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./service-worker.js')
-    .then(initialiseState);
-  } else {
-    window.Demo.debug.log('Service workers aren\'t supported in this browser.');
-  }
 });
