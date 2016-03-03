@@ -9,11 +9,11 @@ self.addEventListener('push', function(event) {
   var tag = 'simple-push-demo-notification-tag';
 
   event.waitUntil(
-    self.registration.showNotification(title, {
-      body: body,
-      icon: icon,
-      tag: tag
-  })
+//    self.registration.showNotification(title, {
+//      body: body,
+//      icon: icon,
+//      tag: tag
+//  })
  );
 
   var promise = self.clients.matchAll({includeUncontrolled:true})
