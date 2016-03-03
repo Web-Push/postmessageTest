@@ -74,11 +74,11 @@ self.addEventListener('notificationclick', function(event) {
 });
 
 self.addEventListener('install', function(event) {
-  Console.log('install');
+  console.log('install');
   event.waitUntil(self.skipWaiting());
 });
 
 self.addEventListener('activate', function(event) {
-  Console.log('activate');
+  console.log('activate');
   event.waitUntil(self.clients.claim());
 });
