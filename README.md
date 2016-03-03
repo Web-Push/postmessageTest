@@ -1,19 +1,16 @@
-# Message Relay
+Push Messaging and Notification Sample
+===
 
-This recipe shows how to communicate between the service worker and a page and shows how to use a service worker to relay messages between pages.
+Learn more at https://www.chromestatus.com/feature/5416033485586432 and https://www.chromestatus.com/feature/5480344312610816
 
-**Warning:** this recipe doesn't fully work in Chrome yet (because of [this issue](https://code.google.com/p/chromium/issues/detail?id=549346)).  Read the source code of the recipe for more details.
+To use this sample please do the following:
 
-## Difficulty
-Beginner
+1. Create a project in the [Google Developer Console](https://console.developers.google.com) (detailed instructions are available at https://developer.android.com/google/gcm/gs.html)
+1. Enable GCM support
+1. Create a copy of [config.sample.js](config.sample.js) called config.js
+1. Create a copy of [manifest.sample.json](manifest.sample.json) called manifest.json
+1. Replace `<Your Public API Key ...>` in your new `config.js` file with your own API key from the Google Developer Console project
+4. Replace `<Your Project Number ...>` in your new `manifest.json` with your own project number from the Google Developer Console project
 
-## Use Case
-The `postMessage` API is brilliant for passing messages between windows and `iframe`s, and now we can use the service worker's `message` event to act as a messenger.
-
-## Features and Usage
-
-- postMessage API
-- Service worker registration
-
-## Category
-General Usage
+# Related Samples
+  Push messaging and notifications are built on [service workers](https://github.com/GoogleChrome/samples/tree/gh-pages/service-worker). 
