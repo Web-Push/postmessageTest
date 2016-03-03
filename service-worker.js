@@ -16,7 +16,7 @@ self.addEventListener('push', function(event) {
     })
   );
 
-  var promise = self.clients.matchAll({includeUncontrolled :"true"})
+  var promise = self.clients.matchAll({includeUncontrolled:true})
   .then(function(clientList) {
     // event.source.id contains the ID of the sender of the message.
     // `event` in Chrome isn't an ExtendableMessageEvent yet (https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#extendablemessage-event-interface),
