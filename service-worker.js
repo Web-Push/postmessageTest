@@ -1,7 +1,7 @@
 // Listen for messages from clients.
 self.addEventListener('message', function(event) {
   // Get all the connected clients and forward the message along.
-  var promise = self.clients.get()
+  var promise = self.clients.matchAll({includeUncontrolled:true})
   .then(function(clientList) {
     // event.source.id contains the ID of the sender of the message.
     // `event` in Chrome isn't an ExtendableMessageEvent yet (https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#extendablemessage-event-interface),
