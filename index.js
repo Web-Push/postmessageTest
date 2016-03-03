@@ -11,7 +11,7 @@ window.addEventListener('load', function() {
     // Give an indicator that service workers are supported.
     status.textContent = 'supported';
 
-    navigator.serviceWorker.register('service-worker.js',  {scope: "./test/"});
+    navigator.serviceWorker.register('service-worker.js',  {scope: "./"});
 
     // Listen for any messages from the service worker.
     navigator.serviceWorker.addEventListener('message', function(event) {
