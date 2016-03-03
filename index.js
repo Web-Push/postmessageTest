@@ -1,5 +1,6 @@
-(function() {
-  // Only setup the demo if service workers are supported.
+window.addEventListener('load', function() {
+  var regButton = document.querySelector('.register-button');
+  regButton.addEventListener('click', function() {
   if (navigator.serviceWorker) {
     // Get the DOM nodes for our UI.
     var message = document.getElementById('message');
@@ -40,4 +41,5 @@
       navigator.serviceWorker.controller.postMessage(message.value);
     });
   }
-})();
+  });
+});
