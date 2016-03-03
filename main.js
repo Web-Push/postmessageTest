@@ -201,7 +201,7 @@ function initialiseState() {
   navigator.serviceWorker.addEventListener('message', function(event) {
       // A message has been received, now show the message on the page.
       var clientId = event.data.client;
-      Console.log('main message clientId' + clientId);
+      console.log('main message clientId' + clientId);
   });
 }
 
