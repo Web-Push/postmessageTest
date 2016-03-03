@@ -34,6 +34,9 @@ self.addEventListener('message', function(event) {
   }
 });
 
+self.addEventListener('install', function(event) {
+  event.waitUntil(self.skipWaiting());
+});
 // Immediately claim any new clients. This is not needed to send messages, but
 // makes for a better demo experience since the user does not need to refresh.
 // A more complete example of this given in the immediate-claim recipe.
