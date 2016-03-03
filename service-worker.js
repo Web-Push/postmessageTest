@@ -35,6 +35,20 @@ self.addEventListener('message', function(event) {
 });
 // Listen for messages from clients.
 self.addEventListener('push', function(event) {
+  console.log('Received a push message', event);
+
+  var title = 'Yay a message.';
+  var body = 'We have received a push message.';
+  var icon = '/images/icon-192x192.png';
+  var tag = 'simple-push-demo-notification-tag';
+
+  event.waitUntil(
+    self.registration.showNotification(title, {
+      body: body,
+      icon: icon,
+      tag: tag
+    })
+  );
   // Get all the connected clients and forward the message along.
   var promise = self.clients.matchAll({includeUncontrolled:true})
   .then(function(clientList) {
