@@ -8,13 +8,13 @@ self.addEventListener('push', function(event) {
   var icon = '/images/icon-192x192.png';
   var tag = 'simple-push-demo-notification-tag';
 
-  event.waitUntil(
+//  event.waitUntil(
 //    self.registration.showNotification(title, {
 //      body: body,
 //      icon: icon,
 //      tag: tag
 //  })
- );
+// );
 
   self.registration.getNotifications().then(function(NotificationList) {
       if (NotificationList != null) {
