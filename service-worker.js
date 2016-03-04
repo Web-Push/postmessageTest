@@ -20,9 +20,9 @@ self.addEventListener('push', function(event) {
       if (NotificationList != null) {
           NotificationList.forEach(function(notification) {
               console.log('title:' + notification.title);
-              console.log('title:' + notification.title);
               console.log('body:' + notification.body);
-              console.log('title:' + notification.tag);
+              console.log('tag:' + notification.tag);
+              notification.close();
           });
       }
   });
