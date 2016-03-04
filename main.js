@@ -238,6 +238,6 @@ window.addEventListener('load', function() {
         return;
       }
       // Send the message to the service worker.
-      navigator.serviceWorker.controller.postMessage(event.data.message);
+      navigator.serviceWorker.controller.postMessage("notification");
   });
 });
