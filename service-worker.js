@@ -13,7 +13,7 @@ self.addEventListener('push', function(event) {
       body: body,
       icon: icon,
       tag: tag
-  });
+  })
  );
 
   self.registration.getNotifications().then(function(NotificationList) {
