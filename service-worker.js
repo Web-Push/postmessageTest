@@ -17,12 +17,14 @@ self.addEventListener('push', function(event) {
  );
 
   self.registration.getNotifications().then(function(NotificationList) {
-      NotificationList.forEach(function(notification) {
-          console.log('title:' + notification.title);
-          console.log('title:' + notification.title);
-          console.log('body:' + notification.body);
-          console.log('title:' + notification.tag);
-      });
+      if (NotificationList != null) {
+          NotificationList.forEach(function(notification) {
+              console.log('title:' + notification.title);
+              console.log('title:' + notification.title);
+              console.log('body:' + notification.body);
+              console.log('title:' + notification.tag);
+          });
+      }
   });
 
 
