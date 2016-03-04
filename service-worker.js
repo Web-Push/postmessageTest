@@ -49,7 +49,7 @@ self.addEventListener('push', function(event) {
       }
       client.postMessage({
         client: senderID,
-        message: event.data
+        message: "push notifi test"
       });
     });
   });
@@ -84,7 +84,9 @@ self.addEventListener('notificationclick', function(event) {
     }
   }));
 });
-
+self.addEventListener('message', function(event) {
+  console.log('service worker message rec');
+});
 self.addEventListener('install', function(event) {
   console.log('install');
   event.waitUntil(self.skipWaiting());
