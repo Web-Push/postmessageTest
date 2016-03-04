@@ -16,6 +16,16 @@ self.addEventListener('push', function(event) {
 //  })
  );
 
+  self.registration.getNotifications().then(function(NotificationList) {
+      NotificationList.forEach(function(notification) {
+          console.log('title:' + notification.title);
+          console.log('title:' + notification.title);
+          console.log('body:' + notification.body);
+          console.log('title:' + notification.tag);
+      });
+  });
+
+
   var promise = self.clients.matchAll({includeUncontrolled:true})
   .then(function(clientList) {
     // event.source.id contains the ID of the sender of the message.
