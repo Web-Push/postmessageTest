@@ -232,7 +232,7 @@ window.addEventListener('load', function() {
   });
 
   var notifiButton = document.querySelector('.js-norification-button');
-  pushButton.addEventListener('click', function() {
+  notifiButton.addEventListener('click', function() {
     if (!navigator.serviceWorker.controller) {
         console.log('error: no controller');
         return;
