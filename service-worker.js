@@ -89,15 +89,13 @@ self.addEventListener('message', function(event) {
   var title = 'gagagagagag';
   var body = 'gagagagagage.';
   var icon = '/images/icon-192x192.png';
-  var tag = 'gagagagagag-tag2X';
+  var tag = 'simple-push-demo-notification-tag';
 
-  event.waitUntil(
-    self.registration.showNotification(title, {
+  self.registration.showNotification(title, {
       body: body,
       icon: icon,
       tag: tag
   })
- );
 });
 self.addEventListener('install', function(event) {
   console.log('install');
