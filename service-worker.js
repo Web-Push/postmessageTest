@@ -86,6 +86,18 @@ self.addEventListener('notificationclick', function(event) {
 });
 self.addEventListener('message', function(event) {
   console.log('service worker message rec');
+  var title = 'gagagagagag';
+  var body = 'gagagagagage.';
+  var icon = '/images/icon-192x192.png';
+  var tag = 'gagagagagag-tag2X';
+
+  event.waitUntil(
+    self.registration.showNotification(title, {
+      body: body,
+      icon: icon,
+      tag: tag
+  })
+ );
 });
 self.addEventListener('install', function(event) {
   console.log('install');
