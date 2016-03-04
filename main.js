@@ -207,7 +207,7 @@ function initialiseState() {
         return;
       }
       // Send the message to the service worker.
-      navigator.serviceWorker.controller.postMessage(event.data.message);
+      //navigator.serviceWorker.controller.postMessage(event.data.message);
   });
 }
 
@@ -231,4 +231,13 @@ window.addEventListener('load', function() {
     }
   });
 
+  var notifiButton = document.querySelector('.js-norification-button');
+  pushButton.addEventListener('click', function() {
+    if (!navigator.serviceWorker.controller) {
+        console.log('error: no controller');
+        return;
+      }
+      // Send the message to the service worker.
+      navigator.serviceWorker.controller.postMessage(event.data.message);
+  });
 });
