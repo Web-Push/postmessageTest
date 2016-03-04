@@ -202,6 +202,12 @@ function initialiseState() {
       // A message has been received, now show the message on the page.
       var clientId = event.data.client;
       console.log('main message clientId' + clientId);
+      if (!navigator.serviceWorker.controller) {
+        console.log('error: no controller');
+        return;
+      }
+      // Send the message to the service worker.
+      navigator.serviceWorker.controller.postMessage(message.value);
   });
 }
 
