@@ -7,14 +7,14 @@ self.addEventListener('push', function(event) {
   var body = 'We have received a push message.';
   var icon = '/images/icon-192x192.png';
   var tag = 'simple-push-demo-notification-tag';
-//
-//  event.waitUntil(
-//    self.registration.showNotification(title, {
-//      body: body,
-//      icon: icon,
-//      tag: tag
-//  })
-// );
+
+  event.waitUntil(
+    self.registration.showNotification(title, {
+      body: body,
+      icon: icon,
+      tag: tag
+  })
+ );
 
   self.registration.getNotifications().then(function(NotificationList) {
       if (NotificationList != null) {
@@ -22,7 +22,7 @@ self.addEventListener('push', function(event) {
               console.log('title:' + notification.title);
               console.log('body:' + notification.body);
               console.log('tag:' + notification.tag);
-//              notification.close();
+              notification.close();
           });
       }
   });
