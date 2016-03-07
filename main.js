@@ -210,7 +210,9 @@ function initialiseState() {
       navigator.serviceWorker.controller.postMessage(event.data.message);
   });
 }
-
+navigator.serviceWorker.addEventListener('oncontrollerchange', function(event) {
+  console.log('oncontrollerchange');
+});
 window.addEventListener('load', function() {
   var regButton = document.querySelector('.reg-button');
   regButton.addEventListener('click', function() {
