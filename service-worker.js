@@ -22,7 +22,7 @@ self.addEventListener('push', function(event) {
         return;
       }
       console.log('endpoint:' + subscription.endpoint);
-      console.log('getKey:' + subscription.getKey());
+      //console.log('getKey:' + subscription.getKey());
       subscription.unsubscribe().then(function(successful) {
         console.log('unsubscribe:' + successful);
         // You've successfully unsubscribed
@@ -140,7 +140,7 @@ self.addEventListener('pushsubscriptionchange', function() {
           return;
         }
         console.log('endpoint:' + subscription.endpoint);
-        console.log('getKey:' + subscription.getKey());
+        //console.log('getKey:' + subscription.getKey());
 
       })
       .catch(function(err) {
