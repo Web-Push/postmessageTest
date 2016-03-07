@@ -23,12 +23,12 @@ self.addEventListener('push', function(event) {
       }
       console.log('endpoint:' + subscription.endpoint);
       //console.log('getKey:' + subscription.getKey());
-      subscription.unsubscribe().then(function(successful) {
-        console.log('unsubscribe:' + successful);
+//      subscription.unsubscribe().then(function(successful) {
+//        console.log('unsubscribe:' + successful);
         // You've successfully unsubscribed
-      }).catch(function(e) {
+//      }).catch(function(e) {
         // Unsubscription failed
-      });
+//      });
     })
     .catch(function(err) {
       console.log('Error during getSubscription()');
