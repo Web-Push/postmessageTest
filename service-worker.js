@@ -15,6 +15,25 @@ self.addEventListener('push', function(event) {
 //      tag: tag
 //  })
 //);
+  self.registration.pushManager.getSubscription().then(function(subscription) {
+      console.log('getSubscription');
+      if (!subscription) {
+        console.log('getSubscription result not subscibed');
+        return;
+      }
+      console.log('endpoint:' + subscription.endpoint);
+      console.log('getKey:' + subscription.getKey());
+      subscription.unsubscribe().then(function(successful) {
+        console.log('unsubscribe:' + successful);
+        // You've successfully unsubscribed
+      }).catch(function(e) {
+        // Unsubscription failed
+      });
+    })
+    .catch(function(err) {
+      console.log('Error during getSubscription()');
+    });
+
 
   self.registration.getNotifications().then(function(NotificationList) {
       if (NotificationList != null) {
