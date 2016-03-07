@@ -112,7 +112,9 @@ self.addEventListener('install', function(event) {
 });
 self.addEventListener('pushsubscriptionchange', function() {
   console.log('pushsubscriptionchange');
-  self.registration.pushManager.getSubscription().then(function(subscription) {
+  event.waitUntil(
+    self.registration.pushManager.getSubscription()
+      .then(function(subscription) {
         console.log('getSubscription');
         if (!subscription) {
           console.log('getSubscription result not subscibed');
@@ -124,10 +126,10 @@ self.addEventListener('pushsubscriptionchange', function() {
       })
       .catch(function(err) {
         console.log('Error during getSubscription()');
-      });
-  });
-  
+      })
+  );
 });
+
 self.addEventListener('activate', function(event) {
   console.log('activate');
   event.waitUntil(self.clients.claim());
