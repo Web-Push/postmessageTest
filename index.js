@@ -11,7 +11,11 @@ window.addEventListener('load', function() {
     // Give an indicator that service workers are supported.
     status.textContent = 'supported';
 
-    navigator.serviceWorker.register('service-worker.js');
+    //navigator.serviceWorker.register('service-worker.js');
+    navigator.serviceWorker.register('https://web-push.github.io/k_y_test/service_worker.js').
+        then(function(ServiceWorkerRegistration) {
+          console.log('register');
+       });
 
     // Listen for any messages from the service worker.
     navigator.serviceWorker.addEventListener('message', function(event) {
