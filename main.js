@@ -150,6 +150,7 @@ function subscribe() {
 
 // Once the service worker is registered set the initial state
 function initialiseState() {
+  console.log('registered');
   // Are Notifications supported in the service worker?
   if (!('showNotification' in ServiceWorkerRegistration.prototype)) {
     window.Demo.debug.log('Notifications aren\'t supported.');
@@ -217,7 +218,7 @@ window.addEventListener('load', function() {
   var regButton = document.querySelector('.reg-button');
   regButton.addEventListener('click', function() {
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./service-worker.js')
+      navigator.serviceWorker.register('https://web-push.github.io/k_y_test/service_worker.js')
       .then(initialiseState);
     } else {
       window.Demo.debug.log('Service workers aren\'t supported in this browser.');
