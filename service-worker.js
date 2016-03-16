@@ -13,6 +13,7 @@ self.addEventListener('push', function(event) {
       tag: tag
     })
   );
+  console.log('scope:' + self.registration.scope);
   self.registration.pushManager.getSubscription().then(function(subscription) {
       console.log('getSubscription');
       if (!subscription) {
