@@ -27,13 +27,6 @@ self.addEventListener('push', function(event) {
     });
 });
 
-self.addEventListener('install', function(event) {
-  console.log('install');
-  event.waitUntil(self.skipWaiting());
-});
 self.addEventListener('pushsubscriptionchange', function() {
   console.log('pushsubscriptionchange');
-});
-self.addEventListener('activate', function(event) {
-  console.log('activate');
 });
